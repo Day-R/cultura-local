@@ -3,36 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cultura Local: Memoria viva de Usaquén</title>
+<title>Festival Historia y Patrimonio Usaquén</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--Y:#FFBA08;--F:#FF2D87;--K:#111111;--W:#FFFFFF;--G:#F5F2EB;--D:#2A2A2A;--MID:#888}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflow-x:hidden}
-
 .hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;background:var(--K);position:relative;overflow:hidden}
 .hero-left{background:var(--Y);padding:3.5rem 3rem 3rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2}
 .hero-tag{display:inline-block;background:var(--K);color:var(--Y);font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.2em;padding:.35rem 1rem;border-radius:2px;align-self:flex-start;margin-bottom:2rem}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,7.5rem);line-height:.88;color:var(--K);margin-bottom:.6rem}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6.8vw,5.6rem);line-height:.92;color:var(--K);margin-bottom:.6rem;letter-spacing:.005em}
 .hero-title em{color:var(--F);font-style:normal;display:block}
 .hero-tagline{font-family:'Crimson Text',serif;font-size:1.4rem;font-style:italic;color:#333;margin-bottom:2.5rem;line-height:1.4}
 .hero-desc{font-size:.95rem;line-height:1.75;color:#444;max-width:440px;margin-bottom:3rem;font-weight:300}
 .hero-cta{display:inline-flex;align-items:center;gap:.7rem;background:var(--K);color:var(--Y);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;padding:.9rem 2.2rem;border-radius:2px;text-decoration:none;align-self:flex-start;transition:background .25s,color .25s}
 .hero-cta:hover{background:var(--F);color:var(--W)}
-.hero-foot{font-size:.7rem;color:#666;letter-spacing:.08em;line-height:1.6}
+.hero-foot{font-size:.7rem;color:#666;letter-spacing:.06em;line-height:1.7;max-width:480px}
 .hero-right{background:var(--K);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;position:relative;gap:1.5rem}
 .hero-badge{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--W);background:var(--F);padding:1.5rem 2rem;border-radius:1.5rem;text-align:center;letter-spacing:.05em}
 .hero-stats{display:flex;gap:1.5rem;margin-top:1rem}
 .stat{text-align:center}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--Y);line-height:1}
 .stat-label{font-size:.7rem;color:var(--MID);letter-spacing:.15em;text-transform:uppercase;margin-top:.2rem}
-
 .sec{padding:5rem 4rem}
 .sec-label{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.22em;color:var(--F);margin-bottom:.6rem;display:block}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:.92;color:var(--K);margin-bottom:1.5rem}
 .sec-body{font-size:1rem;line-height:1.8;color:#444;max-width:580px;font-weight:300}
-
 .mapa-sec{background:var(--G);padding:5rem 4rem}
 .mapa-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
 .mapa-svg-container{background:var(--W);border-radius:12px;padding:2rem;border:1px solid #e5e0d8}
@@ -43,7 +40,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .leyenda-dot.y{background:var(--Y);border:2px solid #d4990a}
 .leyenda-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;margin-bottom:.3rem}
 .leyenda-desc{font-size:.88rem;color:#555;line-height:1.6;font-weight:300}
-
 .sectores-sec{background:var(--K);padding:5rem 4rem}
 .sectores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border-radius:8px;overflow:hidden}
 .sector-card{padding:2.5rem 2rem;position:relative;overflow:hidden;transition:transform .2s}
@@ -54,7 +50,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .sc-line{width:30px;height:3px;margin-bottom:1rem}
 .c1 .sc-line{background:var(--K)}.c2 .sc-line,.c3 .sc-line,.c4 .sc-line{background:var(--Y)}
 .sc-desc{font-size:.88rem;line-height:1.65;opacity:.88;font-weight:300}
-
 .entrevistas-sec{background:var(--G);padding:5rem 4rem}
 .entrevistas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .ec{background:var(--W);border-radius:8px;padding:2rem;border-top:3px solid var(--F);transition:transform .2s}
@@ -64,7 +59,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .ec-nombre{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--K);margin-bottom:.3rem}
 .ec-rol{font-size:.85rem;color:var(--F);margin-bottom:1rem;font-style:italic;font-family:'Crimson Text',serif}
 .ec-desc{font-size:.88rem;line-height:1.65;color:#555;font-weight:300}
-
 .productos-sec{background:var(--W);padding:5rem 4rem}
 .productos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .prod-card{border-radius:8px;overflow:hidden}
@@ -74,31 +68,27 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .prod-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;line-height:1.05;margin-bottom:.5rem}
 .prod-bottom{background:#f9f9f9;padding:1.5rem 2rem;border:1px solid #eee;border-top:none;border-radius:0 0 8px 8px}
 .prod-desc{font-size:.9rem;line-height:1.7;color:#555;font-weight:300}
-
 .strip{background:var(--F);padding:4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem}
 .strip-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--W);line-height:.95;max-width:500px}
 .strip-btn{background:var(--Y);color:var(--K);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;padding:.9rem 2.2rem;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background .2s;display:inline-block}
 .strip-btn:hover{background:var(--W)}
-
 .contacto-sec{background:var(--K);padding:5rem 4rem}
 .contacto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .cc{background:#1a1a1a;border-radius:8px;padding:2rem;border-left:3px solid var(--F)}
 .cc-label{font-size:.7rem;letter-spacing:.18em;color:var(--MID);text-transform:uppercase;margin-bottom:.5rem}
 .cc-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--W);margin-bottom:.3rem}
 .cc-val{font-size:.92rem;color:var(--Y);word-break:break-all}
-
 footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.f-brand{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--K);letter-spacing:.05em}
+.f-brand{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--K);letter-spacing:.05em}
 .f-legal{font-size:.75rem;color:#555}
 .f-badge{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.15em;color:var(--K);background:rgba(0,0,0,.12);padding:.3rem .9rem;border-radius:2px}
-
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr}.hero-right{min-height:280px}
-  .mapa-wrap,.sectores-grid,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
-  .sectores-grid{grid-template-columns:1fr 1fr}
-  .sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec{padding:3.5rem 1.5rem}
-  .strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
-  footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
+.hero{grid-template-columns:1fr}.hero-right{min-height:280px}
+.mapa-wrap,.sectores-grid,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
+.sectores-grid{grid-template-columns:1fr 1fr}
+.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec{padding:3.5rem 1.5rem}
+.strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
+footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 }
 @media(max-width:600px){.sectores-grid{grid-template-columns:1fr}}
 </style>
@@ -107,239 +97,222 @@ footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;jus
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <span class="hero-tag">MÁS CULTURA LOCAL · USAQUÉN · BOGOTÁ</span>
-    <div>
-      <h1 class="hero-title">CULTURA<br><em>LOCAL</em></h1>
-      <p class="hero-tagline">Memoria viva de Usaquén</p>
-      <p class="hero-desc">Un proyecto de memoria histórica que documenta las raíces, tradiciones y primeros pobladores de Unicerros y El Codito — los cerros nororientales que le dieron vida a Usaquén.</p>
-      <a href="#contacto" class="hero-cta">Conoce el proyecto →</a>
-    </div>
-    <p class="hero-foot">PROGRAMA FINANCIADO POR EL FONDO DE DESARROLLO LOCAL<br>ALCALDÍA MAYOR DE BOGOTÁ D.C. · LOCALIDAD USAQUÉN</p>
-  </div>
-  <div class="hero-right">
-    <div class="hero-badge">CULTURA<br>L•CAL</div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Sectores</div></div>
-      <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Entrevistas</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Productos</div></div>
-    </div>
-  </div>
+<div class="hero-left">
+<span class="hero-tag">MÁS CULTURA LOCAL · USAQUÉN · BOGOTÁ</span>
+<div>
+<h1 class="hero-title">FESTIVAL<br>HISTORIA Y<br><em>PATRIMONIO</em><br>USAQUÉN</h1>
+<p class="hero-tagline">Memoria viva de Usaquén</p>
+<p class="hero-desc">Un proyecto de memoria histórica que documenta las raíces, tradiciones y primeros pobladores de Unicerros y El Codito — los cerros nororientales que le dieron vida a Usaquén.</p>
+<a href="#contacto" class="hero-cta">Conoce el proyecto →</a>
+</div>
+<p class="hero-foot">Proyecto financiado por el Fondo de Desarrollo Local de Usaquén en alianza con el programa Más Cultura Local.</p>
+</div>
+<div class="hero-right">
+<div class="hero-badge">CULTURA<br>L•CAL</div>
+<div class="hero-stats">
+<div class="stat"><div class="stat-num">4</div><div class="stat-label">Sectores</div></div>
+<div class="stat"><div class="stat-num">12+</div><div class="stat-label">Entrevistas</div></div>
+<div class="stat"><div class="stat-num">3</div><div class="stat-label">Productos</div></div>
+</div>
+</div>
 </section>
 
 <!-- ACERCA -->
 <section class="sec">
-  <span class="sec-label">¿DE QUÉ SE TRATA?</span>
-  <h2 class="sec-title">Unicerros y El Codito:<br>Donde nació Usaquén</h2>
-  <p class="sec-body">Los cerros nororientales de Bogotá guardan una historia que pocos conocen. Unicerros y El Codito son barrios construidos por las manos de sus propios habitantes, con una identidad cultural profunda: canteros que tallaron piedra, lavanderos que trabajaron en las quebradas, festividades religiosas y celebraciones agrícolas que siguen vivas hoy. Este proyecto documenta esas voces antes de que se pierdan.</p>
+<span class="sec-label">¿DE QUÉ SE TRATA?</span>
+<h2 class="sec-title">Unicerros y El Codito:<br>Donde nació Usaquén</h2>
+<p class="sec-body">Los cerros nororientales de Bogotá guardan una historia que pocos conocen. Unicerros y El Codito son barrios construidos por las manos de sus propios habitantes, con una identidad cultural profunda: canteros que tallaron piedra, lavanderos que trabajaron en las quebradas, festividades religiosas y celebraciones agrícolas que siguen vivas hoy. Este proyecto documenta esas voces antes de que se pierdan.</p>
 </section>
 
 <!-- MAPA -->
 <section class="mapa-sec" id="mapa">
-  <span class="sec-label">EL TERRITORIO</span>
-  <h2 class="sec-title">Los cerros de Usaquén</h2>
-  <div class="mapa-wrap">
-    <div class="mapa-svg-container">
-      <svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
-        <defs>
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M20 0L0 0 0 20" fill="none" stroke="#e8e3da" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="400" height="450" fill="#faf8f4"/>
-        <rect width="400" height="450" fill="url(#grid)"/>
-        <text x="200" y="24" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#aaa" letter-spacing="3">LOCALIDAD DE USAQUÉN · BOGOTÁ</text>
-        <line x1="30" y1="31" x2="370" y2="31" stroke="#ddd" stroke-width="0.8"/>
-
-        <!-- Silueta Usaquén -->
-        <polygon points="65,50 130,40 195,36 258,42 308,55 348,80 362,130 356,185 338,240 305,290 268,338 225,375 180,398 135,402 88,388 60,358 44,315 42,268 46,218 52,165 57,110 60,78" fill="#EDE8DF" stroke="#C8BFB0" stroke-width="1.5"/>
-
-        <!-- Zona El Codito (norte-alto) -->
-        <ellipse cx="215" cy="92" rx="58" ry="44" fill="#FF2D87" fill-opacity="0.15" stroke="#FF2D87" stroke-width="1.8" stroke-dasharray="5,3"/>
-        <ellipse cx="215" cy="92" rx="28" ry="20" fill="#FF2D87" fill-opacity="0.3"/>
-        <circle cx="215" cy="92" r="9" fill="#FF2D87"/>
-        <circle cx="215" cy="92" r="4.5" fill="#fff"/>
-        <rect x="230" y="70" width="105" height="22" rx="3" fill="#FF2D87"/>
-        <text x="282" y="85" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#fff" letter-spacing="1.5">EL CODITO</text>
-        <text x="215" y="128" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#CC1066" font-style="italic">Cerros nororientales</text>
-
-        <!-- Zona Unicerros (calle 127) -->
-        <ellipse cx="178" cy="205" rx="54" ry="40" fill="#FFBA08" fill-opacity="0.18" stroke="#FFBA08" stroke-width="1.8" stroke-dasharray="5,3"/>
-        <ellipse cx="178" cy="205" rx="26" ry="18" fill="#FFBA08" fill-opacity="0.4"/>
-        <circle cx="178" cy="205" r="9" fill="#FFBA08" stroke="#c8900a" stroke-width="2"/>
-        <circle cx="178" cy="205" r="4.5" fill="#fff"/>
-        <rect x="193" y="183" width="108" height="22" rx="3" fill="#111"/>
-        <text x="247" y="198" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#FFBA08" letter-spacing="1.5">UNICERROS</text>
-        <text x="178" y="238" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#996600" font-style="italic">Cerros calle 127</text>
-
-        <!-- Línea entre puntos -->
-        <line x1="215" y1="101" x2="178" y2="196" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
-
-        <!-- Calle 127 referencia -->
-        <line x1="30" y1="218" x2="370" y2="218" stroke="#bbb" stroke-width="1" stroke-dasharray="8,4"/>
-        <text x="34" y="214" font-family="sans-serif" font-size="8" fill="#aaa">Cll. 127</text>
-
-        <!-- Autopista Norte referencia -->
-        <line x1="128" y1="40" x2="110" y2="402" stroke="#ccc" stroke-width="1.2" stroke-dasharray="6,3"/>
-        <text x="95" y="60" font-family="sans-serif" font-size="7.5" fill="#bbb" transform="rotate(-90,95,60)">Autopista Norte</text>
-
-        <!-- Brújula -->
-        <g transform="translate(358,415)">
-          <circle cx="0" cy="0" r="16" fill="white" stroke="#ddd" stroke-width="1"/>
-          <polygon points="0,-13 3,-4 0,-7 -3,-4" fill="#FF2D87"/>
-          <polygon points="0,13 3,4 0,7 -3,4" fill="#ccc"/>
-          <text x="0" y="-17" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="bold" fill="#FF2D87">N</text>
-        </g>
-
-        <!-- Escala -->
-        <line x1="32" y1="428" x2="102" y2="428" stroke="#aaa" stroke-width="1.5"/>
-        <line x1="32" y1="424" x2="32" y2="432" stroke="#aaa" stroke-width="1.5"/>
-        <line x1="102" y1="424" x2="102" y2="432" stroke="#aaa" stroke-width="1.5"/>
-        <text x="67" y="442" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#aaa">aprox. 3 km</text>
-      </svg>
-      <p style="text-align:center;font-size:.68rem;color:#bbb;margin-top:.6rem;font-style:italic">Croquis referencial · Localidad de Usaquén · Bogotá D.C.</p>
-    </div>
-
-    <div class="mapa-leyenda">
-      <div>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--K);line-height:1;margin-bottom:1.2rem">Dos sectores,<br>una sola historia</p>
-        <p style="font-size:.92rem;line-height:1.75;color:#555;font-weight:300;margin-bottom:2rem">En los cerros nororientales de Bogotá, dos comunidades guardan la memoria viva de cómo se construyó Usaquén. Este proyecto los documenta, los preserva y los pone en el mapa.</p>
-      </div>
-      <div class="leyenda-item">
-        <div class="leyenda-dot f"></div>
-        <div>
-          <div class="leyenda-title">El Codito</div>
-          <p class="leyenda-desc">Cerros nororientales de Usaquén. Barrio histórico donde se asentaron los primeros pobladores. Aquí nacieron los Canteros, los Lavanderos y las tradiciones de la Virgen del Carmen y la Fiesta del Maíz.</p>
-        </div>
-      </div>
-      <div class="leyenda-item">
-        <div class="leyenda-dot y"></div>
-        <div>
-          <div class="leyenda-title">Unicerros</div>
-          <p class="leyenda-desc">Sector de los cerros a la altura de la calle 127. Comunidad con identidad propia, vistas panorámicas de Bogotá y una historia de construcción colectiva que este proyecto recoge en entrevistas y fotografía.</p>
-        </div>
-      </div>
-      <div style="background:var(--K);color:var(--W);border-radius:8px;padding:1.5rem;margin-top:.5rem">
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:var(--Y);letter-spacing:.1em;margin-bottom:.5rem">¿SABÍAS QUE?</p>
-        <p style="font-size:.85rem;line-height:1.7;color:#ccc;font-weight:300">Los Canteros del Codito tallaron la piedra que se usó en construcciones icónicas de Bogotá. Sus manos construyeron literalmente parte de la ciudad que hoy conocemos.</p>
-      </div>
-    </div>
-  </div>
+<span class="sec-label">EL TERRITORIO</span>
+<h2 class="sec-title">Los cerros de Usaquén</h2>
+<div class="mapa-wrap">
+<div class="mapa-svg-container">
+<svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<defs>
+<pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+<path d="M20 0L0 0 0 20" fill="none" stroke="#e8e3da" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="400" height="450" fill="#faf8f4"/>
+<rect width="400" height="450" fill="url(#grid)"/>
+<text x="200" y="24" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#aaa" letter-spacing="3">LOCALIDAD DE USAQUÉN · BOGOTÁ</text>
+<line x1="30" y1="31" x2="370" y2="31" stroke="#ddd" stroke-width="0.8"/>
+<polygon points="65,50 130,40 195,36 258,42 308,55 348,80 362,130 356,185 338,240 305,290 268,338 225,375 180,398 135,402 88,388 60,358 44,315 42,268 46,218 52,165 57,110 60,78" fill="#EDE8DF" stroke="#C8BFB0" stroke-width="1.5"/>
+<ellipse cx="215" cy="92" rx="58" ry="44" fill="#FF2D87" fill-opacity="0.15" stroke="#FF2D87" stroke-width="1.8" stroke-dasharray="5,3"/>
+<ellipse cx="215" cy="92" rx="28" ry="20" fill="#FF2D87" fill-opacity="0.3"/>
+<circle cx="215" cy="92" r="9" fill="#FF2D87"/>
+<circle cx="215" cy="92" r="4.5" fill="#fff"/>
+<rect x="230" y="70" width="105" height="22" rx="3" fill="#FF2D87"/>
+<text x="282" y="85" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#fff" letter-spacing="1.5">EL CODITO</text>
+<text x="215" y="128" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#CC1066" font-style="italic">Cerros nororientales</text>
+<ellipse cx="178" cy="205" rx="54" ry="40" fill="#FFBA08" fill-opacity="0.18" stroke="#FFBA08" stroke-width="1.8" stroke-dasharray="5,3"/>
+<ellipse cx="178" cy="205" rx="26" ry="18" fill="#FFBA08" fill-opacity="0.4"/>
+<circle cx="178" cy="205" r="9" fill="#FFBA08" stroke="#c8900a" stroke-width="2"/>
+<circle cx="178" cy="205" r="4.5" fill="#fff"/>
+<rect x="193" y="183" width="108" height="22" rx="3" fill="#111"/>
+<text x="247" y="198" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#FFBA08" letter-spacing="1.5">UNICERROS</text>
+<text x="178" y="238" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#996600" font-style="italic">Cerros calle 127</text>
+<line x1="215" y1="101" x2="178" y2="196" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+<line x1="30" y1="218" x2="370" y2="218" stroke="#bbb" stroke-width="1" stroke-dasharray="8,4"/>
+<text x="34" y="214" font-family="sans-serif" font-size="8" fill="#aaa">Cll. 127</text>
+<line x1="128" y1="40" x2="110" y2="402" stroke="#ccc" stroke-width="1.2" stroke-dasharray="6,3"/>
+<text x="95" y="60" font-family="sans-serif" font-size="7.5" fill="#bbb" transform="rotate(-90,95,60)">Autopista Norte</text>
+<g transform="translate(358,415)">
+<circle cx="0" cy="0" r="16" fill="white" stroke="#ddd" stroke-width="1"/>
+<polygon points="0,-13 3,-4 0,-7 -3,-4" fill="#FF2D87"/>
+<polygon points="0,13 3,4 0,7 -3,4" fill="#ccc"/>
+<text x="0" y="-17" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="bold" fill="#FF2D87">N</text>
+</g>
+<line x1="32" y1="428" x2="102" y2="428" stroke="#aaa" stroke-width="1.5"/>
+<line x1="32" y1="424" x2="32" y2="432" stroke="#aaa" stroke-width="1.5"/>
+<line x1="102" y1="424" x2="102" y2="432" stroke="#aaa" stroke-width="1.5"/>
+<text x="67" y="442" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#aaa">aprox. 3 km</text>
+</svg>
+<p style="text-align:center;font-size:.68rem;color:#bbb;margin-top:.6rem;font-style:italic">Croquis referencial · Localidad de Usaquén · Bogotá D.C.</p>
+</div>
+<div class="mapa-leyenda">
+<div>
+<p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--K);line-height:1;margin-bottom:1.2rem">Dos sectores,<br>una sola historia</p>
+<p style="font-size:.92rem;line-height:1.75;color:#555;font-weight:300;margin-bottom:2rem">En los cerros nororientales de Bogotá, dos comunidades guardan la memoria viva de cómo se construyó Usaquén. Este proyecto los documenta, los preserva y los pone en el mapa.</p>
+</div>
+<div class="leyenda-item">
+<div class="leyenda-dot f"></div>
+<div>
+<div class="leyenda-title">El Codito</div>
+<p class="leyenda-desc">Cerros nororientales de Usaquén. Barrio histórico donde se asentaron los primeros pobladores. Aquí nacieron los Canteros, los Lavanderos y las tradiciones de la Virgen del Carmen y la Fiesta del Maíz.</p>
+</div>
+</div>
+<div class="leyenda-item">
+<div class="leyenda-dot y"></div>
+<div>
+<div class="leyenda-title">Unicerros</div>
+<p class="leyenda-desc">Sector de los cerros a la altura de la calle 127. Comunidad con identidad propia, vistas panorámicas de Bogotá y una historia de construcción colectiva que este proyecto recoge en entrevistas y fotografía.</p>
+</div>
+</div>
+<div style="background:var(--K);color:var(--W);border-radius:8px;padding:1.5rem;margin-top:.5rem">
+<p style="font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:var(--Y);letter-spacing:.1em;margin-bottom:.5rem">¿SABÍAS QUE?</p>
+<p style="font-size:.85rem;line-height:1.7;color:#ccc;font-weight:300">Los Canteros del Codito tallaron la piedra que se usó en construcciones icónicas de Bogotá. Sus manos construyeron literalmente parte de la ciudad que hoy conocemos.</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- SECTORES -->
 <section class="sectores-sec" id="sectores">
-  <span class="sec-label">LOS SECTORES</span>
-  <h2 class="sec-title" style="color:var(--W)">Los cuatro pilares<br>de la memoria</h2>
-  <div class="sectores-grid">
-    <div class="sector-card c1">
-      <div class="sc-num">01</div>
-      <div class="sc-name">CANTEROS</div>
-      <div class="sc-line"></div>
-      <p class="sc-desc">Trabajadores de la piedra que tallaron los cimientos de la ciudad desde los cerros del Codito. Un oficio que está desapareciendo y que este proyecto documenta antes de que se pierda para siempre.</p>
-    </div>
-    <div class="sector-card c2">
-      <div class="sc-num">02</div>
-      <div class="sc-name">LAVANDEROS</div>
-      <div class="sc-line"></div>
-      <p class="sc-desc">Las mujeres y hombres que lavaban ropa en las quebradas de los cerros. Una historia de trabajo colectivo, economía popular y territorio que define la identidad del sector.</p>
-    </div>
-    <div class="sector-card c3">
-      <div class="sc-num">03</div>
-      <div class="sc-name">VIRGEN DEL CARMEN</div>
-      <div class="sc-line"></div>
-      <p class="sc-desc">Tradición religiosa y cultural que une al barrio cada año en una festividad que preserva las raíces comunitarias y la fe que acompañó a los primeros fundadores del sector.</p>
-    </div>
-    <div class="sector-card c4">
-      <div class="sc-num">04</div>
-      <div class="sc-name">FIESTA DEL MAÍZ</div>
-      <div class="sc-line"></div>
-      <p class="sc-desc">Celebración agrícola y cultural que conecta al barrio con su pasado rural y campesino. Una fiesta que recuerda los orígenes de quienes llegaron del campo a construir sus vidas en los cerros.</p>
-    </div>
-  </div>
+<span class="sec-label">LOS SECTORES</span>
+<h2 class="sec-title" style="color:var(--W)">Los cuatro pilares<br>de la memoria</h2>
+<div class="sectores-grid">
+<div class="sector-card c1">
+<div class="sc-num">01</div>
+<div class="sc-name">CANTEROS</div>
+<div class="sc-line"></div>
+<p class="sc-desc">Trabajadores de la piedra que tallaron los cimientos de la ciudad desde los cerros del Codito. Un oficio que está desapareciendo y que este proyecto documenta antes de que se pierda para siempre.</p>
+</div>
+<div class="sector-card c2">
+<div class="sc-num">02</div>
+<div class="sc-name">LAVANDEROS</div>
+<div class="sc-line"></div>
+<p class="sc-desc">Las mujeres y hombres que lavaban ropa en las quebradas de los cerros. Una historia de trabajo colectivo, economía popular y territorio que define la identidad del sector.</p>
+</div>
+<div class="sector-card c3">
+<div class="sc-num">03</div>
+<div class="sc-name">VIRGEN DEL CARMEN</div>
+<div class="sc-line"></div>
+<p class="sc-desc">Tradición religiosa y cultural que une al barrio cada año en una festividad que preserva las raíces comunitarias y la fe que acompañó a los primeros fundadores del sector.</p>
+</div>
+<div class="sector-card c4">
+<div class="sc-num">04</div>
+<div class="sc-name">FIESTA DEL MAÍZ</div>
+<div class="sc-line"></div>
+<p class="sc-desc">Celebración agrícola y cultural que conecta al barrio con su pasado rural y campesino. Una fiesta que recuerda los orígenes de quienes llegaron del campo a construir sus vidas en los cerros.</p>
+</div>
+</div>
 </section>
 
 <!-- ENTREVISTAS -->
 <section class="entrevistas-sec" id="entrevistas">
-  <span class="sec-label">LAS VOCES</span>
-  <h2 class="sec-title">Primeros pobladores:<br>quienes llegaron y se quedaron</h2>
-  <p class="sec-body" style="margin-bottom:0">Tres entrevistas por sector — doce historias de vida. Así quedarán cuando tengas el contenido:</p>
-  <div class="entrevistas-grid">
-    <div class="ec">
-      <div class="ec-sector">Canteros · El Codito</div>
-      <div class="ec-nombre">[Nombre del entrevistado]</div>
-      <div class="ec-rol">Cantero — primer poblador</div>
-      <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
-    </div>
-    <div class="ec">
-      <div class="ec-sector">Lavanderos · El Codito</div>
-      <div class="ec-nombre">[Nombre del entrevistado]</div>
-      <div class="ec-rol">Lavandera — fundadora del sector</div>
-      <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
-    </div>
-    <div class="ec">
-      <div class="ec-sector">Unicerros · Calle 127</div>
-      <div class="ec-nombre">[Nombre del entrevistado]</div>
-      <div class="ec-rol">Habitante histórico</div>
-      <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
-    </div>
-  </div>
+<span class="sec-label">LAS VOCES</span>
+<h2 class="sec-title">Primeros pobladores:<br>quienes llegaron y se quedaron</h2>
+<p class="sec-body" style="margin-bottom:0">Tres entrevistas por sector — doce historias de vida. Así quedarán cuando tengas el contenido:</p>
+<div class="entrevistas-grid">
+<div class="ec">
+<div class="ec-sector">Canteros · El Codito</div>
+<div class="ec-nombre">[Nombre del entrevistado]</div>
+<div class="ec-rol">Cantero — primer poblador</div>
+<p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
+</div>
+<div class="ec">
+<div class="ec-sector">Lavanderos · El Codito</div>
+<div class="ec-nombre">[Nombre del entrevistado]</div>
+<div class="ec-rol">Lavandera — fundadora del sector</div>
+<p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
+</div>
+<div class="ec">
+<div class="ec-sector">Unicerros · Calle 127</div>
+<div class="ec-nombre">[Nombre del entrevistado]</div>
+<div class="ec-rol">Habitante histórico</div>
+<p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
+</div>
+</div>
 </section>
 
 <!-- PRODUCTOS -->
 <section class="productos-sec" id="productos">
-  <span class="sec-label">LO QUE PRODUCIMOS</span>
-  <h2 class="sec-title">Tres productos,<br>una sola historia</h2>
-  <div class="productos-grid">
-    <div class="prod-card">
-      <div class="prod-top pt-y"><span class="prod-icon">📖</span><div class="prod-name">LIBRO DE MEMORIA</div></div>
-      <div class="prod-bottom"><p class="prod-desc">Documento físico y digital con las historias de los primeros pobladores. Entrevistas transcritas, fotografías históricas y relatos del territorio organizados por sector.</p></div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-top pt-f"><span class="prod-icon">📷</span><div class="prod-name">FOTOGRAFÍA DOCUMENTAL</div></div>
-      <div class="prod-bottom"><p class="prod-desc">Registro fotográfico profesional de los sectores, los personajes, los oficios y las tradiciones. Galería física para el barrio y digital en esta página web.</p></div>
-    </div>
-    <div class="prod-card">
-      <div class="prod-top pt-d"><span class="prod-icon">🎬</span><div class="prod-name">VIDEOS Y CLIPS</div></div>
-      <div class="prod-bottom"><p class="prod-desc">Serie de videos con las entrevistas completas. Clips cortos de la localidad para redes sociales, YouTube y esta página web.</p></div>
-    </div>
-  </div>
+<span class="sec-label">LO QUE PRODUCIMOS</span>
+<h2 class="sec-title">Tres productos,<br>una sola historia</h2>
+<div class="productos-grid">
+<div class="prod-card">
+<div class="prod-top pt-y"><span class="prod-icon">📖</span><div class="prod-name">LIBRO DE MEMORIA</div></div>
+<div class="prod-bottom"><p class="prod-desc">Documento físico y digital con las historias de los primeros pobladores. Entrevistas transcritas, fotografías históricas y relatos del territorio organizados por sector.</p></div>
+</div>
+<div class="prod-card">
+<div class="prod-top pt-f"><span class="prod-icon">📷</span><div class="prod-name">FOTOGRAFÍA DOCUMENTAL</div></div>
+<div class="prod-bottom"><p class="prod-desc">Registro fotográfico profesional de los sectores, los personajes, los oficios y las tradiciones. Galería física para el barrio y digital en esta página web.</p></div>
+</div>
+<div class="prod-card">
+<div class="prod-top pt-d"><span class="prod-icon">🎬</span><div class="prod-name">VIDEOS Y CLIPS</div></div>
+<div class="prod-bottom"><p class="prod-desc">Serie de videos con las entrevistas completas. Clips cortos de la localidad para redes sociales, YouTube y esta página web.</p></div>
+</div>
+</div>
 </section>
 
 <!-- STRIP -->
 <div class="strip">
-  <p class="strip-text">¿QUIERES APOYAR ESTE PROYECTO?</p>
-  <a href="#contacto" class="strip-btn">HÁBLANOS →</a>
+<p class="strip-text">¿QUIERES APOYAR ESTE PROYECTO?</p>
+<a href="#contacto" class="strip-btn">HÁBLANOS →</a>
 </div>
 
 <!-- CONTACTO -->
 <section class="contacto-sec" id="contacto">
-  <span class="sec-label">CONTACTO</span>
-  <h2 class="sec-title" style="color:var(--W)">ENCUÉNTRANOS</h2>
-  <div class="contacto-grid">
-    <div class="cc">
-      <div class="cc-label">Responsable del proyecto</div>
-      <div class="cc-name">[Nombre del responsable]</div>
-      <div class="cc-val">[correo@ejemplo.com]</div>
-    </div>
-    <div class="cc">
-      <div class="cc-label">Localidad</div>
-      <div class="cc-name">Usaquén · Bogotá D.C.</div>
-      <div class="cc-val">Unicerros · El Codito · Cerros Nororientales</div>
-    </div>
-    <div class="cc">
-      <div class="cc-label">Redes sociales</div>
-      <div class="cc-name">Síguenos en Instagram</div>
-      <div class="cc-val">@[usuario_instagram]</div>
-    </div>
-  </div>
+<span class="sec-label">CONTACTO</span>
+<h2 class="sec-title" style="color:var(--W)">ENCUÉNTRANOS</h2>
+<div class="contacto-grid">
+<div class="cc">
+<div class="cc-label">Escríbenos</div>
+<div class="cc-name">Correo oficial</div>
+<a href="mailto:festivalmemoriaypatrimoniousa@gmail.com" class="cc-val" style="text-decoration:none;display:block">festivalmemoriaypatrimoniousa@<br>gmail.com</a>
+</div>
+<div class="cc">
+<div class="cc-label">Localidad</div>
+<div class="cc-name">Usaquén · Bogotá D.C.</div>
+<div class="cc-val">Unicerros · El Codito · Cerros Nororientales</div>
+</div>
+<div class="cc">
+<div class="cc-label">Redes sociales</div>
+<div class="cc-name">Síguenos en Instagram</div>
+<div class="cc-val">@[usuario_instagram]</div>
+</div>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="f-brand">CULTURA LOCAL · MÁS CULTURA LOCAL</span>
-  <span class="f-legal">© 2025 · Bogotá D.C. · Todos los derechos reservados</span>
-  <span class="f-badge">BOGOTÁ</span>
+<span class="f-brand">FESTIVAL HISTORIA Y PATRIMONIO USAQUÉN</span>
+<span class="f-legal">© 2025 · Bogotá D.C. · Más Cultura Local</span>
+<span class="f-badge">BOGOTÁ</span>
 </footer>
 
 </body>

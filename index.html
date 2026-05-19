@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -10,6 +10,8 @@
 :root{--Y:#FFBA08;--F:#FF2D87;--K:#111111;--W:#FFFFFF;--G:#F5F2EB;--D:#2A2A2A;--MID:#888}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflow-x:hidden}
+
+/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;background:var(--K);position:relative;overflow:hidden}
 .hero-left{background:var(--Y);padding:3.5rem 3rem 3rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2}
 .hero-tag{display:inline-block;background:var(--K);color:var(--Y);font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.2em;padding:.35rem 1rem;border-radius:2px;align-self:flex-start;margin-bottom:2rem}
@@ -20,16 +22,26 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .hero-cta{display:inline-flex;align-items:center;gap:.7rem;background:var(--K);color:var(--Y);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;padding:.9rem 2.2rem;border-radius:2px;text-decoration:none;align-self:flex-start;transition:background .25s,color .25s}
 .hero-cta:hover{background:var(--F);color:var(--W)}
 .hero-foot{font-size:.7rem;color:#666;letter-spacing:.06em;line-height:1.7;max-width:480px}
-.hero-right{background:var(--K);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;position:relative;gap:1.5rem}
+.hero-right{background:var(--K);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;position:relative;gap:1.5rem;overflow:hidden}
+.hero-right-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.28;z-index:0;pointer-events:none}
+.hero-right>*:not(.hero-right-photo){position:relative;z-index:1}
 .hero-badge{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--W);background:var(--F);padding:1.5rem 2rem;border-radius:1.5rem;text-align:center;letter-spacing:.05em}
 .hero-stats{display:flex;gap:1.5rem;margin-top:1rem}
 .stat{text-align:center}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--Y);line-height:1}
 .stat-label{font-size:.7rem;color:var(--MID);letter-spacing:.15em;text-transform:uppercase;margin-top:.2rem}
+
+/* ACERCA */
 .sec{padding:5rem 4rem}
 .sec-label{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.22em;color:var(--F);margin-bottom:.6rem;display:block}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:.92;color:var(--K);margin-bottom:1.5rem}
 .sec-body{font-size:1rem;line-height:1.8;color:#444;max-width:580px;font-weight:300}
+.acerca-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2rem}
+.acerca-photo-wrap{border-radius:8px;overflow:hidden;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.14)}
+.acerca-photo-wrap img{width:100%;display:block;object-fit:cover;max-height:400px}
+.acerca-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:var(--W);font-size:.72rem;font-style:italic;padding:2rem 1.2rem .9rem;letter-spacing:.03em}
+
+/* MAPA */
 .mapa-sec{background:var(--G);padding:5rem 4rem}
 .mapa-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
 .mapa-svg-container{background:var(--W);border-radius:12px;padding:2rem;border:1px solid #e5e0d8}
@@ -40,25 +52,55 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .leyenda-dot.y{background:var(--Y);border:2px solid #d4990a}
 .leyenda-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;margin-bottom:.3rem}
 .leyenda-desc{font-size:.88rem;color:#555;line-height:1.6;font-weight:300}
+
+/* GALERÍA */
+.galeria-sec{background:var(--K);padding:5rem 4rem}
+.galeria-sec .sec-title{color:var(--W)}
+.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:3rem}
+.gi{overflow:hidden;position:relative;background:#1a1a1a;height:220px}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gi:hover img{transform:scale(1.07)}
+.gi.w2{grid-column:span 2}
+.gi.h-sm{height:180px}
+.gi-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.08) 55%,transparent 100%);opacity:0;transition:opacity .3s}
+.gi:hover .gi-overlay{opacity:1}
+.gi-label{position:absolute;bottom:.8rem;left:.9rem;right:.9rem;color:var(--W);font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:.1em;transform:translateY(6px);opacity:0;transition:all .3s .04s}
+.gi:hover .gi-label{opacity:1;transform:translateY(0)}
+.gi-tag{position:absolute;top:.7rem;left:.7rem;background:var(--F);color:var(--W);font-family:'Bebas Neue',sans-serif;font-size:.6rem;letter-spacing:.14em;padding:.2rem .6rem;border-radius:2px;z-index:2}
+.gi-tag.y{background:var(--Y);color:var(--K)}
+.gi-tag.k{background:rgba(0,0,0,.65);color:var(--W)}
+
+/* SECTORES */
 .sectores-sec{background:var(--K);padding:5rem 4rem}
 .sectores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border-radius:8px;overflow:hidden}
 .sector-card{padding:2.5rem 2rem;position:relative;overflow:hidden;transition:transform .2s}
 .sector-card:hover{transform:scale(1.02);z-index:2}
 .c1{background:var(--Y);color:var(--K)}.c2{background:var(--D);color:var(--W)}.c3{background:var(--F);color:var(--W)}.c4{background:#1a1a1a;color:var(--W)}
+.sc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.14;z-index:0;pointer-events:none;transition:opacity .3s}
+.sector-card:hover .sc-photo{opacity:.22}
+.sc-num,.sc-name,.sc-line,.sc-desc{position:relative;z-index:1}
 .sc-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;opacity:.18;line-height:1;margin-bottom:.5rem}
 .sc-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:.8rem;line-height:1.1}
 .sc-line{width:30px;height:3px;margin-bottom:1rem}
 .c1 .sc-line{background:var(--K)}.c2 .sc-line,.c3 .sc-line,.c4 .sc-line{background:var(--Y)}
 .sc-desc{font-size:.88rem;line-height:1.65;opacity:.88;font-weight:300}
+
+/* ENTREVISTAS */
 .entrevistas-sec{background:var(--G);padding:5rem 4rem}
 .entrevistas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.ec{background:var(--W);border-radius:8px;padding:2rem;border-top:3px solid var(--F);transition:transform .2s}
+.ec{background:var(--W);border-radius:8px;overflow:hidden;transition:transform .2s;border-top:3px solid var(--F)}
 .ec:nth-child(2){border-top-color:var(--Y)}.ec:nth-child(3){border-top-color:var(--K)}
 .ec:hover{transform:translateY(-4px)}
+.ec-img-wrap{height:200px;overflow:hidden}
+.ec-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;transition:transform .4s}
+.ec:hover .ec-img-wrap img{transform:scale(1.05)}
+.ec-body{padding:1.5rem 2rem 2rem}
 .ec-sector{font-size:.7rem;letter-spacing:.18em;color:var(--MID);text-transform:uppercase;margin-bottom:.4rem;font-family:'Bebas Neue',sans-serif}
 .ec-nombre{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--K);margin-bottom:.3rem}
 .ec-rol{font-size:.85rem;color:var(--F);margin-bottom:1rem;font-style:italic;font-family:'Crimson Text',serif}
 .ec-desc{font-size:.88rem;line-height:1.65;color:#555;font-weight:300}
+
+/* PRODUCTOS */
 .productos-sec{background:var(--W);padding:5rem 4rem}
 .productos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .prod-card{border-radius:8px;overflow:hidden}
@@ -68,29 +110,43 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .prod-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;line-height:1.05;margin-bottom:.5rem}
 .prod-bottom{background:#f9f9f9;padding:1.5rem 2rem;border:1px solid #eee;border-top:none;border-radius:0 0 8px 8px}
 .prod-desc{font-size:.9rem;line-height:1.7;color:#555;font-weight:300}
+
+/* STRIP */
 .strip{background:var(--F);padding:4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem}
 .strip-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--W);line-height:.95;max-width:500px}
 .strip-btn{background:var(--Y);color:var(--K);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;padding:.9rem 2.2rem;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background .2s;display:inline-block}
 .strip-btn:hover{background:var(--W)}
+
+/* CONTACTO */
 .contacto-sec{background:var(--K);padding:5rem 4rem}
 .contacto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .cc{background:#1a1a1a;border-radius:8px;padding:2rem;border-left:3px solid var(--F)}
 .cc-label{font-size:.7rem;letter-spacing:.18em;color:var(--MID);text-transform:uppercase;margin-bottom:.5rem}
 .cc-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--W);margin-bottom:.3rem}
 .cc-val{font-size:.92rem;color:var(--Y);word-break:break-all}
+
 footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .f-brand{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--K);letter-spacing:.05em}
 .f-legal{font-size:.75rem;color:#555}
 .f-badge{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.15em;color:var(--K);background:rgba(0,0,0,.12);padding:.3rem .9rem;border-radius:2px}
+
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}.hero-right{min-height:280px}
-.mapa-wrap,.sectores-grid,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
+.mapa-wrap,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
 .sectores-grid{grid-template-columns:1fr 1fr}
-.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec{padding:3.5rem 1.5rem}
+.acerca-inner{grid-template-columns:1fr}
+.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec{padding:3.5rem 1.5rem}
 .strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
 footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
+.galeria-grid{grid-template-columns:repeat(2,1fr)}
+.gi.w2{grid-column:span 1}
+.gi{height:180px}.gi.h-sm{height:160px}
 }
-@media(max-width:600px){.sectores-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+.sectores-grid{grid-template-columns:1fr}
+.galeria-grid{grid-template-columns:1fr 1fr}
+.gi{height:150px}
+}
 </style>
 </head>
 <body>
@@ -108,6 +164,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <p class="hero-foot">Proyecto financiado por el Fondo de Desarrollo Local de Usaquén en alianza con el programa Más Cultura Local.</p>
 </div>
 <div class="hero-right">
+<img src="galeria/IMG_0159.JPG" class="hero-right-photo" alt="Vista panorámica de Bogotá desde los cerros de Usaquén">
 <div class="hero-badge">CULTURA<br>L•CAL</div>
 <div class="hero-stats">
 <div class="stat"><div class="stat-num">4</div><div class="stat-label">Sectores</div></div>
@@ -120,8 +177,16 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <!-- ACERCA -->
 <section class="sec">
 <span class="sec-label">¿DE QUÉ SE TRATA?</span>
+<div class="acerca-inner">
+<div>
 <h2 class="sec-title">Unicerros y El Codito:<br>Donde nació Usaquén</h2>
 <p class="sec-body">Los cerros nororientales de Bogotá guardan una historia que pocos conocen. Unicerros y El Codito son barrios construidos por las manos de sus propios habitantes, con una identidad cultural profunda: canteros que tallaron piedra, lavanderos que trabajaron en las quebradas, festividades religiosas y celebraciones agrícolas que siguen vivas hoy. Este proyecto documenta esas voces antes de que se pierdan.</p>
+</div>
+<div class="acerca-photo-wrap">
+<img src="galeria/foto-comunidad-reunion.png" alt="Comunidad reunida — primeros pobladores de Unicerros y El Codito">
+<div class="acerca-photo-cap">Primeros pobladores reunidos — Unicerros y El Codito, Bogotá</div>
+</div>
+</div>
 </section>
 
 <!-- MAPA -->
@@ -200,30 +265,109 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 </div>
 </section>
 
+<!-- GALERÍA FOTOGRÁFICA -->
+<section class="galeria-sec" id="galeria">
+<span class="sec-label">EL TERRITORIO EN IMÁGENES</span>
+<h2 class="sec-title">Así se ven Unicerros<br>y El Codito</h2>
+<div class="galeria-grid">
+
+<!-- Fila 1: 4 imágenes iguales -->
+<div class="gi">
+<img src="galeria/foto-escaleras-rojas.jpeg" alt="Escaleras coloridas del barrio El Codito">
+<div class="gi-tag">El Codito</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Escaleras del barrio</div>
+</div>
+<div class="gi">
+<img src="galeria/foto-escaleras-koi.jpeg" alt="Arte urbano en escaleras — peces koi">
+<div class="gi-tag">El Codito</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Arte urbano en las escaleras</div>
+</div>
+<div class="gi">
+<img src="galeria/foto-barrio-arriba.jpeg" alt="Vista del barrio desde los cerros">
+<div class="gi-tag y">Unicerros</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Vista del barrio desde los cerros</div>
+</div>
+<div class="gi">
+<img src="galeria/IMG_0156.JPG" alt="Tanque de acueducto Codito III">
+<div class="gi-tag">El Codito</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Codito III · Acueducto de Bogotá</div>
+</div>
+
+<!-- Fila 2: ancha + 2 normales -->
+<div class="gi w2">
+<img src="galeria/IMG_0143.JPG" alt="Pasaje histórico del barrio El Codito" style="object-position:center 40%">
+<div class="gi-tag">El Codito</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Pasaje histórico del barrio</div>
+</div>
+<div class="gi">
+<img src="galeria/IMG_0130.JPG" alt="Jardín y huerta en los cerros" style="object-position:center 60%">
+<div class="gi-tag y">Unicerros</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Huertas y jardines comunitarios</div>
+</div>
+<div class="gi">
+<img src="galeria/IMG_0134.JPG" alt="Actividad en la huerta comunitaria">
+<div class="gi-tag k">Comunidad</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Trabajo comunitario</div>
+</div>
+
+<!-- Fila 3: normal + ancha + normal -->
+<div class="gi h-sm">
+<img src="galeria/IMG_0146.JPG" alt="Arco del pasaje — El Codito" style="object-position:center 30%">
+<div class="gi-tag">El Codito</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Arco histórico del barrio</div>
+</div>
+<div class="gi w2 h-sm">
+<img src="galeria/IMG_0159.JPG" alt="Vista panorámica de Bogotá desde los cerros de Usaquén">
+<div class="gi-tag y">Panorámica</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Bogotá desde los cerros de Usaquén</div>
+</div>
+<div class="gi h-sm">
+<img src="galeria/foto-territorio.jpeg" alt="El territorio — los cerros">
+<div class="gi-tag k">El territorio</div>
+<div class="gi-overlay"></div>
+<div class="gi-label">Los cerros y su entorno</div>
+</div>
+
+</div>
+</section>
+
 <!-- SECTORES -->
 <section class="sectores-sec" id="sectores">
 <span class="sec-label">LOS SECTORES</span>
 <h2 class="sec-title" style="color:var(--W)">Los cuatro pilares<br>de la memoria</h2>
 <div class="sectores-grid">
 <div class="sector-card c1">
+<img src="galeria/foto-canteros.jpeg" class="sc-photo" alt="Canteros del Codito">
 <div class="sc-num">01</div>
 <div class="sc-name">CANTEROS</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Trabajadores de la piedra que tallaron los cimientos de la ciudad desde los cerros del Codito. Un oficio que está desapareciendo y que este proyecto documenta antes de que se pierda para siempre.</p>
 </div>
 <div class="sector-card c2">
+<img src="galeria/20260514_161933.jpg" class="sc-photo" alt="Lavanderos históricos">
 <div class="sc-num">02</div>
 <div class="sc-name">LAVANDEROS</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Las mujeres y hombres que lavaban ropa en las quebradas de los cerros. Una historia de trabajo colectivo, economía popular y territorio que define la identidad del sector.</p>
 </div>
 <div class="sector-card c3">
+<img src="galeria/foto-grupo-grande.jpeg" class="sc-photo" alt="Comunidad reunida — Virgen del Carmen">
 <div class="sc-num">03</div>
 <div class="sc-name">VIRGEN DEL CARMEN</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Tradición religiosa y cultural que une al barrio cada año en una festividad que preserva las raíces comunitarias y la fe que acompañó a los primeros fundadores del sector.</p>
 </div>
 <div class="sector-card c4">
+<img src="galeria/foto-familia.jpeg" class="sc-photo" alt="Fiesta del Maíz — memoria familiar">
 <div class="sc-num">04</div>
 <div class="sc-name">FIESTA DEL MAÍZ</div>
 <div class="sc-line"></div>
@@ -239,22 +383,37 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <p class="sec-body" style="margin-bottom:0">Tres entrevistas por sector — doce historias de vida. Así quedarán cuando tengas el contenido:</p>
 <div class="entrevistas-grid">
 <div class="ec">
+<div class="ec-img-wrap">
+<img src="galeria/foto-lideresa.jpeg" alt="Lideresa comunitaria — El Codito">
+</div>
+<div class="ec-body">
 <div class="ec-sector">Canteros · El Codito</div>
 <div class="ec-nombre">[Nombre del entrevistado]</div>
 <div class="ec-rol">Cantero — primer poblador</div>
 <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
 </div>
+</div>
 <div class="ec">
+<div class="ec-img-wrap">
+<img src="galeria/foto-comunidad-calle.jpeg" alt="Comunidad — Unicerros y El Codito">
+</div>
+<div class="ec-body">
 <div class="ec-sector">Lavanderos · El Codito</div>
 <div class="ec-nombre">[Nombre del entrevistado]</div>
 <div class="ec-rol">Lavandera — fundadora del sector</div>
 <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
 </div>
+</div>
 <div class="ec">
+<div class="ec-img-wrap">
+<img src="galeria/foto-cuatro-personas.jpeg" alt="Habitantes históricos de Unicerros">
+</div>
+<div class="ec-body">
 <div class="ec-sector">Unicerros · Calle 127</div>
 <div class="ec-nombre">[Nombre del entrevistado]</div>
 <div class="ec-rol">Habitante histórico</div>
 <p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
+</div>
 </div>
 </div>
 </section>
@@ -310,7 +469,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 
 <!-- FOOTER -->
 <footer>
-<span class="f-brand">FESTIVAL HISTORIA Y PATRIMONIO USAQUÉN </span>
+<span class="f-brand">FESTIVAL HISTORIA Y PATRIMONIO USAQUÉN</span>
 <span class="f-legal">Financiado por Fondo de Desarrollo Local de Usaquén · © 2025 · Más Cultura Local</span>
 <span class="f-badge">BOGOTÁ</span>
 </footer>

@@ -130,12 +130,28 @@ footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;jus
 .f-legal{font-size:.75rem;color:#555}
 .f-badge{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.15em;color:var(--K);background:rgba(0,0,0,.12);padding:.3rem .9rem;border-radius:2px}
 
+/* LIBRO DE MEMORIA */
+.libro-sec{background:var(--G);padding:5rem 4rem;border-top:1px solid #e5e0d8}
+.libro-inner{display:grid;grid-template-columns:2fr 1fr;gap:5rem;margin-top:3rem;align-items:start}
+.libro-narrative{font-family:'Crimson Text',serif;font-size:1.12rem;line-height:1.9;color:#333}
+.libro-narrative p{margin-bottom:1.4rem}
+.libro-sub{font-family:'Bebas Neue',sans-serif;font-size:.82rem;letter-spacing:.2em;color:var(--F);display:block;margin:2rem 0 .6rem}
+.libro-aside{position:sticky;top:3rem}
+.libro-year{font-family:'Bebas Neue',sans-serif;font-size:6rem;line-height:1;color:var(--Y);opacity:.35;margin-bottom:.5rem;letter-spacing:-.02em}
+.libro-quote{font-family:'Crimson Text',serif;font-size:1.35rem;font-style:italic;color:var(--K);line-height:1.55;border-left:3px solid var(--F);padding-left:1.2rem;margin-bottom:1.2rem}
+.libro-autor{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.15em;color:var(--MID)}
+.libro-valerio{background:var(--K);color:var(--W);border-radius:8px;padding:1.8rem;margin-top:2rem}
+.libro-valerio-label{font-family:'Bebas Neue',sans-serif;font-size:.68rem;letter-spacing:.18em;color:var(--Y);margin-bottom:.5rem}
+.libro-valerio-nombre{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--W);margin-bottom:.5rem}
+.libro-valerio-desc{font-size:.88rem;color:#ccc;line-height:1.65;font-weight:300;font-family:'Crimson Text',serif;font-style:italic}
+
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}.hero-right{min-height:280px}
 .mapa-wrap,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
 .sectores-grid{grid-template-columns:1fr 1fr}
-.acerca-inner{grid-template-columns:1fr}
-.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec{padding:3.5rem 1.5rem}
+.acerca-inner,.libro-inner{grid-template-columns:1fr}
+.libro-aside{position:static}
+.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec,.libro-sec{padding:3.5rem 1.5rem}
 .strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
 footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 .galeria-grid{grid-template-columns:repeat(2,1fr)}
@@ -185,6 +201,38 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <div class="acerca-photo-wrap">
 <img src="galeria/foto-comunidad-reunion.png" alt="Comunidad reunida — primeros pobladores de Unicerros y El Codito">
 <div class="acerca-photo-cap">Primeros pobladores reunidos — Unicerros y El Codito, Bogotá</div>
+</div>
+</div>
+</section>
+
+<!-- LIBRO DE MEMORIA -->
+<section class="libro-sec" id="libro">
+<span class="sec-label">EL LIBRO DE MEMORIA</span>
+<h2 class="sec-title">¿Por qué este proyecto?</h2>
+<div class="libro-inner">
+<div class="libro-narrative">
+<p>Desde que conocí este territorio, en los años 1975–76, me llamó la atención ver la unión y solidaridad de los residentes en estas laderas de los cerros de Usaquén. Sus reuniones, asambleas, mingas, reinados, juegos tradicionales, fiestas populares y alboradas.</p>
+<span class="libro-sub">Las adversidades</span>
+<p>La falta de apoyo de la institucionalidad, debido a las normas que regían para estos territorios. Sectores por fuera de la cota de servicios públicos y barrios sin legalizar. Asentamientos humanos subnormales donde predominaban los campamentos urbanos y rurales —viviendas construidas en madera y teja de zinc, dispersas en territorio urbano o rural, carentes de servicios públicos y de infraestructura—, algunas con seguridad jurídica: construidas en adobe, ladrillo o bloque, con escritura, impuestos y servicios básicos.</p>
+<p>Al entrar en diálogo con sus habitantes, se siente su calor humano, tranquilo, familiar y lleno de historias.</p>
+<span class="libro-sub">La transformación</span>
+<p>Con el pasar de los años, se ve la transformación de estos territorios: legalización de barrios a través de resoluciones emitidas por la Oficina de Planeación Distrital. A partir de este acto jurídico vino la acometida de los servicios públicos y la construcción de infraestructura —vías, salones comunales, centros de salud, parroquias, parques, casas de servicios para los diferentes grupos poblacionales— mejorando la calidad de vida de las mismas comunidades.</p>
+<span class="libro-sub">Identidad y convivencia</span>
+<p>Dentro del trabajo de investigación y diálogo, se evidencia entre sus residentes un profundo arraigo por sus territorios y una convivencia cálida entre vecinos y familiares.</p>
+<span class="libro-sub">Cómo nació el proyecto</span>
+<p>A mediados de 2024, me encontraba en la Casa del Consumidor de bienes y servicios cerca a la Alcaldía Local de Usaquén, realizando un trámite para apoyar a un vecino, cuando un funcionario que conoce mi labor social me invitó a realizar una propuesta para recoger la historia de los cerros nororientales. Ingresé al recinto donde encontré otros líderes comunitarios con el mismo propósito. Nos unimos y dejamos la propuesta radicada.</p>
+<p>En 2025 fui notificado de la aprobación y me citaron a la Alcaldía Local, donde conocí a <strong>Camilo Vera</strong>, líder del sector de Codito, Buenavista y Cerro Norte, con quien hemos venido desarrollando este importante ejercicio de visibilizar la historia de canteros, lavanderas y festividades tradicionales.</p>
+<p>A solicitud de varias personas mayores que asisten a reuniones en salones comunales y que manifestaron no tener acceso a la virtualidad, este libro es también para ellos.</p>
+</div>
+<div class="libro-aside">
+<div class="libro-year">1975</div>
+<blockquote class="libro-quote">"Al entrar en diálogo con sus habitantes, se siente su calor humano, tranquilo, familiar y lleno de historias."</blockquote>
+<p class="libro-autor">Investigador del proyecto · Cerros nororientales de Usaquén</p>
+<div class="libro-valerio">
+<div class="libro-valerio-label">Testimonio · El Codito</div>
+<div class="libro-valerio-nombre">Don Valerio Velandia</div>
+<p class="libro-valerio-desc">Habitante del sector desde 1946. Testigo del nacimiento de los barrios y de las antiguas canteras de Delicias del Carmen.</p>
+</div>
 </div>
 </div>
 </section>
@@ -384,13 +432,13 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <div class="entrevistas-grid">
 <div class="ec">
 <div class="ec-img-wrap">
-<img src="galeria/foto-lideresa.jpeg" alt="Lideresa comunitaria — El Codito">
+<img src="galeria/foto-canteros.jpeg" alt="Don Valerio Velandia — El Codito">
 </div>
 <div class="ec-body">
 <div class="ec-sector">Canteros · El Codito</div>
-<div class="ec-nombre">[Nombre del entrevistado]</div>
-<div class="ec-rol">Cantero — primer poblador</div>
-<p class="ec-desc">"[Fragmento de la entrevista. Una frase que enganche y que invite a ver el video completo.]"</p>
+<div class="ec-nombre">Don Valerio Velandia</div>
+<div class="ec-rol">Habitante histórico — desde 1946</div>
+<p class="ec-desc">"Testigo del nacimiento de los barrios y de las antiguas canteras de Delicias del Carmen."</p>
 </div>
 </div>
 <div class="ec">

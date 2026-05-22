@@ -16,7 +16,10 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(git restore *)",
       "Bash(node -e ' *)",
-      "Bash(rm nuevas_fotos_tmp.html)"
+      "Bash(rm nuevas_fotos_tmp.html)",
+      "Bash(git count-objects *)",
+      "Bash(git status *)",
+      "Bash(awk '{print $5, $9}')"
     ]
   }
 }

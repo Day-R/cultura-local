@@ -19,7 +19,13 @@
       "Bash(rm nuevas_fotos_tmp.html)",
       "Bash(git count-objects *)",
       "Bash(git status *)",
-      "Bash(awk '{print $5, $9}')"
+      "Bash(awk '{print $5, $9}')",
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp OK'\\)\")",
+      "Bash(node -e \"require\\('jimp'\\); console.log\\('jimp OK'\\)\")",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(npm install *)",
+      "Bash(node comprimir-fotos.js)"
     ]
   }
 }

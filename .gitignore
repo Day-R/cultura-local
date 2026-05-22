@@ -3,3 +3,7 @@
 *.mov
 *.MOV
 *.avi
+galeria-web/
+node_modules/
+comprimir-fotos.js
+aplicar-fotos-web.js

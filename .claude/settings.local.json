@@ -12,7 +12,11 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:day-r.github.io)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git restore *)",
+      "Bash(node -e ' *)",
+      "Bash(rm nuevas_fotos_tmp.html)"
     ]
   }
 }

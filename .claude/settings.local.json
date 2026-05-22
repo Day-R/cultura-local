@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\Users\\\\DayRuiz\\\\Documents\\\\Proyecto Diego\" add index.html \"20260514_161933.jpg\" \"WhatsApp Image 2026-05-13 at 11.47.18 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.18 PM \\(1\\).jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.16 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.14 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.15 PM \\(1\\).jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.15 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.37.35 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.17 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.37.09 PM.jpeg\" \"WhatsApp Image 2026-05-13 at 11.47.17 PM \\(1\\).jpeg\" \"IMG_0156.JPG\" \"IMG_0146.JPG\" \"IMG_0143.JPG\" \"IMG_0130.JPG\" \"IMG_0134.JPG\" \"IMG_0159.JPG\" \"Mariposa 1.png\")",
+      "Bash(git -C \"C:\\\\Users\\\\DayRuiz\\\\Documents\\\\Proyecto Diego\" status)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:day-r.github.io)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(git commit *)"
+    ]
+  }
+}

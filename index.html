@@ -70,6 +70,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .gi-tag.y{background:var(--Y);color:var(--K)}
 .gi-tag.k{background:rgba(0,0,0,.65);color:var(--W)}
 
+/* FILTRO GALERÍA */
+.filtro-bar{display:flex;gap:.5rem;margin:2.5rem 0 0;flex-wrap:wrap}
+.filtro-btn{font-family:'Bebas Neue',sans-serif;font-size:.82rem;letter-spacing:.16em;padding:.55rem 1.4rem;border-radius:2px;border:2px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.45);cursor:pointer;transition:all .22s}
+.filtro-btn:hover{border-color:rgba(255,255,255,.55);color:var(--W)}
+.filtro-btn.active[data-filtro="todo"]{background:var(--W);color:var(--K);border-color:var(--W)}
+.filtro-btn.active[data-filtro="unicerros"]{background:var(--Y);color:var(--K);border-color:var(--Y)}
+.filtro-btn.active[data-filtro="el-codito"]{background:var(--F);color:var(--W);border-color:var(--F)}
+.gi{transition:opacity .25s}
+.gi.gi-oculto{display:none}
+
+/* SECTOR THUMBS */
+.sc-fotos{display:flex;gap:4px;margin-top:1.2rem;position:relative;z-index:1;flex-wrap:wrap}
+.sc-thumb{width:54px;height:40px;object-fit:cover;border-radius:3px;opacity:.7;flex-shrink:0;transition:opacity .2s;cursor:pointer}
+.sc-thumb:hover{opacity:1}
+
 /* SECTORES */
 .sectores-sec{background:var(--K);padding:5rem 4rem}
 .sectores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border-radius:8px;overflow:hidden}
@@ -180,7 +195,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <p class="hero-foot">Proyecto financiado por el Fondo de Desarrollo Local de Usaquén en alianza con el programa Más Cultura Local.</p>
 </div>
 <div class="hero-right">
-<img src="galeria/IMG_0159.JPG" class="hero-right-photo" alt="Vista panorámica de Bogotá desde los cerros de Usaquén">
+<img src="galeria/unicerros/IMG_0159.JPG" class="hero-right-photo" alt="Vista panorámica de Bogotá desde los cerros de Usaquén">
 <div class="hero-badge">CULTURA<br>L•CAL</div>
 <div class="hero-stats">
 <div class="stat"><div class="stat-num">4</div><div class="stat-label">Sectores</div></div>
@@ -317,72 +332,108 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <section class="galeria-sec" id="galeria">
 <span class="sec-label">EL TERRITORIO EN IMÁGENES</span>
 <h2 class="sec-title">Así se ven Unicerros<br>y El Codito</h2>
+<div class="filtro-bar">
+<button class="filtro-btn active" data-filtro="todo" onclick="filtrarGaleria('todo')">TODOS</button>
+<button class="filtro-btn" data-filtro="unicerros" onclick="filtrarGaleria('unicerros')">UNICERROS</button>
+<button class="filtro-btn" data-filtro="el-codito" onclick="filtrarGaleria('el-codito')">EL CODITO</button>
+</div>
+
 <div class="galeria-grid">
 
-<!-- Fila 1: 4 imágenes iguales -->
-<div class="gi">
-<img src="galeria/foto-escaleras-rojas.jpeg" alt="Escaleras coloridas del barrio El Codito">
-<div class="gi-tag">El Codito</div>
-<div class="gi-overlay"></div>
+<!-- EL CODITO -->
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/foto-escaleras-rojas.jpeg" alt="Escaleras coloridas — El Codito">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
 <div class="gi-label">Escaleras del barrio</div>
 </div>
-<div class="gi">
-<img src="galeria/foto-escaleras-koi.jpeg" alt="Arte urbano en escaleras — peces koi">
-<div class="gi-tag">El Codito</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Arte urbano en las escaleras</div>
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/foto-escaleras-koi.jpeg" alt="Arte urbano en escaleras — peces koi">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
+<div class="gi-label">Arte urbano · escaleras</div>
 </div>
-<div class="gi">
-<img src="galeria/foto-barrio-arriba.jpeg" alt="Vista del barrio desde los cerros">
-<div class="gi-tag y">Unicerros</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Vista del barrio desde los cerros</div>
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/IMG_0156.JPG" alt="Tanque Codito III">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
+<div class="gi-label">Codito III · Acueducto</div>
 </div>
-<div class="gi">
-<img src="galeria/IMG_0156.JPG" alt="Tanque de acueducto Codito III">
-<div class="gi-tag">El Codito</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Codito III · Acueducto de Bogotá</div>
-</div>
-
-<!-- Fila 2: ancha + 2 normales -->
-<div class="gi w2">
-<img src="galeria/IMG_0143.JPG" alt="Pasaje histórico del barrio El Codito" style="object-position:center 40%">
-<div class="gi-tag">El Codito</div>
-<div class="gi-overlay"></div>
+<div class="gi w2" data-lugar="el-codito">
+<img src="galeria/el-codito/IMG_0143.JPG" alt="Pasaje histórico — El Codito" style="object-position:center 40%">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
 <div class="gi-label">Pasaje histórico del barrio</div>
 </div>
-<div class="gi">
-<img src="galeria/IMG_0130.JPG" alt="Jardín y huerta en los cerros" style="object-position:center 60%">
-<div class="gi-tag y">Unicerros</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Huertas y jardines comunitarios</div>
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/IMG_0146.JPG" alt="Arco — El Codito" style="object-position:center 30%">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
+<div class="gi-label">Arco histórico</div>
 </div>
-<div class="gi">
-<img src="galeria/IMG_0134.JPG" alt="Actividad en la huerta comunitaria">
-<div class="gi-tag k">Comunidad</div>
-<div class="gi-overlay"></div>
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/foto-canteros.jpeg" alt="Canteros — El Codito">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
+<div class="gi-label">Los canteros</div>
+</div>
+<div class="gi" data-lugar="el-codito">
+<img src="galeria/el-codito/foto-grupo-grande.jpeg" alt="Comunidad — El Codito">
+<div class="gi-tag">El Codito</div><div class="gi-overlay"></div>
+<div class="gi-label">Comunidad del Codito</div>
+</div>
+
+<!-- UNICERROS -->
+<div class="gi w2" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0279.JPG" alt="Panorámica de Bogotá desde Unicerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Bogotá desde Unicerros</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0159.JPG" alt="Vista panorámica desde los cerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Los cerros de Usaquén</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/foto-barrio-arriba.jpeg" alt="Vista del barrio desde los cerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Vista del barrio</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0277.JPG" alt="Vegetación de los cerros — Unicerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Cerros nororientales</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0275.JPG" alt="Sendero en los cerros — Unicerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Sendero en los cerros</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0274.JPG" alt="Huerta comunitaria — Unicerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Huerta comunitaria</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0130.JPG" alt="Jardín en los cerros — Unicerros" style="object-position:center 60%">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
+<div class="gi-label">Jardines y huertas</div>
+</div>
+<div class="gi" data-lugar="unicerros">
+<img src="galeria/unicerros/IMG_0134.JPG" alt="Actividad comunitaria — Unicerros">
+<div class="gi-tag y">Unicerros</div><div class="gi-overlay"></div>
 <div class="gi-label">Trabajo comunitario</div>
 </div>
 
-<!-- Fila 3: normal + ancha + normal -->
-<div class="gi h-sm">
-<img src="galeria/IMG_0146.JPG" alt="Arco del pasaje — El Codito" style="object-position:center 30%">
-<div class="gi-tag">El Codito</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Arco histórico del barrio</div>
+<!-- AMBOS SECTORES -->
+<div class="gi w2" data-lugar="ambos">
+<img src="galeria/IMG_0280.JPG" alt="Reunión comunitaria — Unicerros y El Codito">
+<div class="gi-tag k">Comunidad</div><div class="gi-overlay"></div>
+<div class="gi-label">Reunión comunitaria</div>
 </div>
-<div class="gi w2 h-sm">
-<img src="galeria/IMG_0159.JPG" alt="Vista panorámica de Bogotá desde los cerros de Usaquén">
-<div class="gi-tag y">Panorámica</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Bogotá desde los cerros de Usaquén</div>
+<div class="gi" data-lugar="ambos">
+<img src="galeria/foto-familia.jpeg" alt="Memoria familiar — los cerros">
+<div class="gi-tag k">Memoria</div><div class="gi-overlay"></div>
+<div class="gi-label">Bellos recuerdos</div>
 </div>
-<div class="gi h-sm">
-<img src="galeria/foto-territorio.jpeg" alt="El territorio — los cerros">
-<div class="gi-tag k">El territorio</div>
-<div class="gi-overlay"></div>
-<div class="gi-label">Los cerros y su entorno</div>
+<div class="gi" data-lugar="ambos">
+<img src="galeria/foto-territorio.jpeg" alt="El territorio">
+<div class="gi-tag k">Territorio</div><div class="gi-overlay"></div>
+<div class="gi-label">El territorio</div>
 </div>
 
 </div>
@@ -394,25 +445,40 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <h2 class="sec-title" style="color:var(--W)">Los cuatro pilares<br>de la memoria</h2>
 <div class="sectores-grid">
 <div class="sector-card c1">
-<img src="galeria/foto-canteros.jpeg" class="sc-photo" alt="Canteros del Codito">
+<img src="galeria/el-codito/foto-canteros.jpeg" class="sc-photo" alt="Canteros del Codito">
 <div class="sc-num">01</div>
 <div class="sc-name">CANTEROS</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Trabajadores de la piedra que tallaron los cimientos de la ciudad desde los cerros del Codito. Un oficio que está desapareciendo y que este proyecto documenta antes de que se pierda para siempre.</p>
+<div class="sc-fotos">
+<img src="galeria/el-codito/foto-canteros.jpeg" class="sc-thumb" alt="">
+<img src="galeria/el-codito/IMG_0143.JPG" class="sc-thumb" alt="">
+<img src="galeria/el-codito/IMG_0146.JPG" class="sc-thumb" alt="">
+</div>
 </div>
 <div class="sector-card c2">
-<img src="galeria/20260514_161933.jpg" class="sc-photo" alt="Lavanderos históricos">
+<img src="galeria/el-codito/20260514_161933.jpg" class="sc-photo" alt="Lavanderos históricos">
 <div class="sc-num">02</div>
 <div class="sc-name">LAVANDEROS</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Las mujeres y hombres que lavaban ropa en las quebradas de los cerros. Una historia de trabajo colectivo, economía popular y territorio que define la identidad del sector.</p>
+<div class="sc-fotos">
+<img src="galeria/el-codito/20260514_161933.jpg" class="sc-thumb" alt="">
+<img src="galeria/unicerros/foto-barrio-arriba.jpeg" class="sc-thumb" alt="">
+<img src="galeria/unicerros/IMG_0275.JPG" class="sc-thumb" alt="">
+</div>
 </div>
 <div class="sector-card c3">
-<img src="galeria/foto-grupo-grande.jpeg" class="sc-photo" alt="Comunidad reunida — Virgen del Carmen">
+<img src="galeria/el-codito/foto-grupo-grande.jpeg" class="sc-photo" alt="Comunidad reunida — Virgen del Carmen">
 <div class="sc-num">03</div>
 <div class="sc-name">VIRGEN DEL CARMEN</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Tradición religiosa y cultural que une al barrio cada año en una festividad que preserva las raíces comunitarias y la fe que acompañó a los primeros fundadores del sector.</p>
+<div class="sc-fotos">
+<img src="galeria/el-codito/foto-grupo-grande.jpeg" class="sc-thumb" alt="">
+<img src="galeria/foto-comunidad-reunion.png" class="sc-thumb" alt="">
+<img src="galeria/IMG_0280.JPG" class="sc-thumb" alt="">
+</div>
 </div>
 <div class="sector-card c4">
 <img src="galeria/foto-familia.jpeg" class="sc-photo" alt="Fiesta del Maíz — memoria familiar">
@@ -420,6 +486,11 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <div class="sc-name">FIESTA DEL MAÍZ</div>
 <div class="sc-line"></div>
 <p class="sc-desc">Celebración agrícola y cultural que conecta al barrio con su pasado rural y campesino. Una fiesta que recuerda los orígenes de quienes llegaron del campo a construir sus vidas en los cerros.</p>
+<div class="sc-fotos">
+<img src="galeria/foto-familia.jpeg" class="sc-thumb" alt="">
+<img src="galeria/unicerros/IMG_0274.JPG" class="sc-thumb" alt="">
+<img src="galeria/foto-cuatro-personas.jpeg" class="sc-thumb" alt="">
+</div>
 </div>
 </div>
 </section>
@@ -432,7 +503,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <div class="entrevistas-grid">
 <div class="ec">
 <div class="ec-img-wrap">
-<img src="galeria/foto-canteros.jpeg" alt="Don Valerio Velandia — El Codito">
+<img src="galeria/el-codito/foto-canteros.jpeg" alt="Don Valerio Velandia — El Codito">
 </div>
 <div class="ec-body">
 <div class="ec-sector">Canteros · El Codito</div>
@@ -443,7 +514,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 </div>
 <div class="ec">
 <div class="ec-img-wrap">
-<img src="galeria/foto-comunidad-calle.jpeg" alt="Comunidad — Unicerros y El Codito">
+<img src="galeria/unicerros/foto-comunidad-calle.jpeg" alt="Comunidad — Unicerros y El Codito">
 </div>
 <div class="ec-body">
 <div class="ec-sector">Lavanderos · El Codito</div>
@@ -522,5 +593,17 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <span class="f-badge">BOGOTÁ</span>
 </footer>
 
+<script>
+function filtrarGaleria(lugar) {
+  document.querySelectorAll('.gi').forEach(function(item) {
+    var itemLugar = item.dataset.lugar;
+    var visible = lugar === 'todo' || itemLugar === lugar || (lugar !== 'todo' && itemLugar === 'ambos');
+    item.classList.toggle('gi-oculto', !visible);
+  });
+  document.querySelectorAll('.filtro-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.filtro === lugar);
+  });
+}
+</script>
 </body>
 </html>

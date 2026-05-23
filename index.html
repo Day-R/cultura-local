@@ -56,7 +56,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 /* GALERÍA */
 .galeria-sec{background:var(--K);padding:5rem 4rem}
 .galeria-sec .sec-title{color:var(--W)}
-.galeria-scroll-wrap{position:relative;margin-top:3rem}
+.galeria-scroll-wrap{position:relative;margin-top:3rem}.galeria-scroll-wrap::before,.galeria-scroll-wrap::after{content:"";position:absolute;top:0;bottom:1rem;width:70px;z-index:4;pointer-events:none}.galeria-scroll-wrap::before{left:0;background:linear-gradient(to right,var(--K) 0%,transparent 100%)}.galeria-scroll-wrap::after{right:0;background:linear-gradient(to left,var(--K) 0%,transparent 100%)}
 .galeria-grid{display:flex;flex-direction:row;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1rem;cursor:grab}
 .galeria-grid:active{cursor:grabbing}
 .galeria-grid::-webkit-scrollbar{height:4px}
@@ -74,9 +74,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .gi-tag.y{background:var(--Y);color:var(--K)}
 .gi-tag.k{background:rgba(0,0,0,.65);color:var(--W)}
 /* flechas de desplazamiento */
-.galeria-arrow{position:absolute;top:50%;transform:translateY(-60%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.6rem;width:2.8rem;height:2.8rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;backdrop-filter:blur(4px)}
-.galeria-arrow:hover{background:rgba(255,255,255,.3)}
-.galeria-arrow-left{left:-1.4rem}.galeria-arrow-right{right:-1.4rem}
+.galeria-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.55);border:none;color:#fff;font-size:1.4rem;width:2.6rem;height:2.6rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;backdrop-filter:blur(6px)}
+.galeria-arrow:hover{background:var(--F)}
+.galeria-arrow-left{left:.7rem}.galeria-arrow-right{right:.7rem}
 
 /* FILTRO GALERÍA */
 .filtro-bar{display:flex;gap:.5rem;margin:2.5rem 0 0;flex-wrap:wrap}
@@ -215,7 +215,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <div>
 <h1 class="hero-title">FESTIVAL<br>HISTORIA Y<br><em>PATRIMONIO</em><br>USAQUÉN</h1>
 <p class="hero-tagline">Memoria viva de Usaquén</p>
-<p class="hero-desc">Un proyecto de memoria histórica que documenta las raíces, tradiciones y primeros pobladores de Sector Delicias, Codito y barrios de ladera — los cerros nororientales que le dieron vida a Usaquén.</p>
+<p class="hero-desc">Un proyecto de memoria histórica que documenta las raíces y tradiciones de los cerros nororientales de Usaquén: Sector Delicias, El Codito y los barrios de ladera.</p>
 <a href="#contacto" class="hero-cta">Conoce el proyecto →</a>
 </div>
 <p class="hero-foot">Proyecto financiado por el Fondo de Desarrollo Local de Usaquén en alianza con el programa Más Cultura Local.</p>
@@ -236,12 +236,12 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <span class="sec-label">¿DE QUÉ SE TRATA?</span>
 <div class="acerca-inner">
 <div>
-<h2 class="sec-title">Sector Delicias, Codito y barrios de ladera:<br>Donde nació Usaquén</h2>
-<p class="sec-body">Los cerros nororientales de Bogotá guardan una historia que pocos conocen. Sector Delicias, Codito y barrios de ladera son barrios construidos por las manos de sus propios habitantes, con una identidad cultural profunda: canteros que tallaron piedra, lavanderas que trabajaron en las quebradas, festividades religiosas y celebraciones agrícolas que siguen vivas hoy. Este proyecto documenta esas voces antes de que se pierdan.</p>
+<h2 class="sec-title">Los cerros nororientales:<br>Donde nació Usaquén</h2>
+<p class="sec-body">Los cerros nororientales de Bogotá guardan una historia que pocos conocen. El Sector Delicias, el Codito y los barrios de ladera son comunidades construidas por las manos de sus propios habitantes, con una identidad cultural profunda: canteros que tallaron piedra, lavanderas que trabajaron en las quebradas, festividades religiosas y celebraciones agrícolas que siguen vivas hoy. Este proyecto documenta esas voces antes de que se pierdan.</p>
 </div>
 <div class="acerca-photo-wrap">
 <img src="galeria/foto-comunidad-reunion.png" alt="Comunidad reunida — primeros pobladores de Sector Delicias, Codito y barrios de ladera" loading="lazy">
-<div class="acerca-photo-cap">Primeros pobladores reunidos — Sector Delicias, Codito y barrios de ladera, Bogotá</div>
+<div class="acerca-photo-cap">Primeros pobladores reunidos — Cerros nororientales, Usaquén, Bogotá</div>
 </div>
 </div>
 </section>
@@ -270,7 +270,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <blockquote class="libro-quote">"Al entrar en diálogo con sus habitantes, se siente su calor humano, tranquilo, familiar y lleno de historias."</blockquote>
 <p class="libro-autor">Investigador del proyecto · Cerros nororientales de Usaquén</p>
 <div class="libro-valerio">
-<div class="libro-valerio-label">Testimonio · El Codito</div>
+<div class="libro-valerio-label">Testimonio · Sector Delicias</div>
 <div class="libro-valerio-nombre">Don Valerio Velandia</div>
 <p class="libro-valerio-desc">Habitante del sector desde 1946. Testigo del nacimiento de los barrios y de las antiguas canteras de Delicias del Carmen.</p>
 </div>
@@ -329,14 +329,14 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 </div>
 <div class="mapa-leyenda">
 <div>
-<p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--K);line-height:1;margin-bottom:1.2rem">Dos sectores,<br>una sola historia</p>
+<p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--K);line-height:1;margin-bottom:1.2rem">Un solo territorio,<br>muchas historias</p>
 <p style="font-size:.92rem;line-height:1.75;color:#555;font-weight:300;margin-bottom:2rem">En los cerros nororientales de Bogotá, dos comunidades guardan la memoria viva de cómo se construyó Usaquén. Este proyecto los documenta, los preserva y los pone en el mapa.</p>
 </div>
 <div class="leyenda-item">
 <div class="leyenda-dot f"></div>
 <div>
 <div class="leyenda-title">El Codito</div>
-<p class="leyenda-desc">Cerros nororientales de Usaquén. Barrio histórico donde se asentaron los primeros pobladores. Aquí nacieron los Canteros, las Lavanderas y las tradiciones de la Virgen del Carmen y la Fiesta del Maíz.</p>
+<p class="leyenda-desc">Cerros nororientales de Usaquén. Barrio histórico donde se asentaron los primeros pobladores. Aquí nacieron los Canteros y las Lavanderas, y se preservan las tradiciones de la Virgen del Carmen y la Fiesta del Maíz.</p>
 </div>
 </div>
 <div class="leyenda-item">
@@ -357,7 +357,7 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <!-- GALERÍA FOTOGRÁFICA -->
 <section class="galeria-sec" id="galeria">
 <span class="sec-label">EL TERRITORIO EN IMÁGENES</span>
-<h2 class="sec-title">Así se ven el Sector Delicias,<br>Codito y barrios de ladera</h2>
+<h2 class="sec-title">El territorio<br>en imágenes</h2>
 <div class="filtro-bar">
 <button class="filtro-btn active" data-filtro="todo" onclick="filtrarGaleria('todo')">TODOS</button>
 <button class="filtro-btn" data-filtro="delicias" onclick="filtrarGaleria('delicias')">SECTOR DELICIAS</button>

@@ -56,12 +56,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 /* GALERÍA */
 .galeria-sec{background:var(--K);padding:5rem 4rem}
 .galeria-sec .sec-title{color:var(--W)}
-.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:3rem}
-.gi{overflow:hidden;position:relative;background:#1a1a1a;height:220px}
+.galeria-scroll-wrap{position:relative;margin-top:3rem}
+.galeria-grid{display:flex;flex-direction:row;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1rem;cursor:grab}
+.galeria-grid:active{cursor:grabbing}
+.galeria-grid::-webkit-scrollbar{height:4px}
+.galeria-grid::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:2px}
+.galeria-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:2px}
+.gi{flex:0 0 auto;width:280px;height:340px;overflow:hidden;position:relative;background:#1a1a1a;scroll-snap-align:start;border-radius:4px}
 .gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .gi:hover img{transform:scale(1.07)}
-.gi.w2{grid-column:span 2}
-.gi.h-sm{height:180px}
+.gi.w2{width:400px}
 .gi-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.08) 55%,transparent 100%);opacity:0;transition:opacity .3s}
 .gi:hover .gi-overlay{opacity:1}
 .gi-label{position:absolute;bottom:.8rem;left:.9rem;right:.9rem;color:var(--W);font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:.1em;transform:translateY(6px);opacity:0;transition:all .3s .04s}
@@ -69,6 +73,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--W);color:var(--K);overflo
 .gi-tag{position:absolute;top:.7rem;left:.7rem;background:var(--F);color:var(--W);font-family:'Bebas Neue',sans-serif;font-size:.6rem;letter-spacing:.14em;padding:.2rem .6rem;border-radius:2px;z-index:2}
 .gi-tag.y{background:var(--Y);color:var(--K)}
 .gi-tag.k{background:rgba(0,0,0,.65);color:var(--W)}
+/* flechas de desplazamiento */
+.galeria-arrow{position:absolute;top:50%;transform:translateY(-60%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.6rem;width:2.8rem;height:2.8rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;backdrop-filter:blur(4px)}
+.galeria-arrow:hover{background:rgba(255,255,255,.3)}
+.galeria-arrow-left{left:-1.4rem}.galeria-arrow-right{right:-1.4rem}
 
 /* FILTRO GALERÍA */
 .filtro-bar{display:flex;gap:.5rem;margin:2.5rem 0 0;flex-wrap:wrap}
@@ -189,14 +197,12 @@ footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;jus
 .sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec,.libro-sec{padding:3.5rem 1.5rem}
 .strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
 footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
-.galeria-grid{grid-template-columns:repeat(2,1fr)}
-.gi.w2{grid-column:span 1}
-.gi{height:180px}.gi.h-sm{height:160px}
+.gi{width:220px;height:280px}.gi.w2{width:300px}
+.galeria-arrow{display:none}
 }
 @media(max-width:600px){
 .sectores-grid{grid-template-columns:1fr}
-.galeria-grid{grid-template-columns:1fr 1fr}
-.gi{height:150px}
+.gi{width:180px;height:240px}.gi.w2{width:240px}
 }
 </style>
 </head>
@@ -358,7 +364,9 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 <button class="filtro-btn" data-filtro="el-codito" onclick="filtrarGaleria('el-codito')">EL CODITO</button>
 </div>
 
-<div class="galeria-grid">
+<div class="galeria-scroll-wrap">
+<button class="galeria-arrow galeria-arrow-left" onclick="scrollGaleria(-1)" aria-label="Anterior">&#8592;</button>
+<div class="galeria-grid" id="galeria-grid">
 
 <!-- EL CODITO -->
 <div class="gi" data-lugar="el-codito">
@@ -821,6 +829,8 @@ footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 </div>
 
 </div>
+<button class="galeria-arrow galeria-arrow-right" onclick="scrollGaleria(1)" aria-label="Siguiente">&#8594;</button>
+</div>
 </section>
 
 <!-- SECTORES -->
@@ -1008,6 +1018,14 @@ function filtrarGaleria(lugar) {
   document.querySelectorAll('.filtro-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.dataset.filtro === lugar);
   });
+  // Volver al inicio al cambiar filtro
+  var grid = document.getElementById('galeria-grid');
+  if (grid) grid.scrollLeft = 0;
+}
+
+function scrollGaleria(dir) {
+  var grid = document.getElementById('galeria-grid');
+  if (grid) grid.scrollBy({ left: dir * 900, behavior: 'smooth' });
 }
 
 // ── LIGHTBOX ──────────────────────────────────────────────
@@ -1021,7 +1039,7 @@ function filtrarGaleria(lugar) {
   var items = [];
 
   function getVisible() {
-    return Array.from(document.querySelectorAll('.galeria-grid .gi:not(.gi-oculto)'));
+    return Array.from(document.querySelectorAll('#galeria-grid .gi:not(.gi-oculto)'));
   }
 
   function open(index) {
@@ -1058,7 +1076,7 @@ function filtrarGaleria(lugar) {
   function next() { current = (current + 1) % items.length; show(); }
 
   // Click on gallery items
-  document.querySelector('.galeria-grid').addEventListener('click', function(e) {
+  document.getElementById('galeria-grid').addEventListener('click', function(e) {
     var gi = e.target.closest('.gi');
     if (!gi) return;
     var vis = getVisible();
@@ -1083,13 +1101,30 @@ function filtrarGaleria(lugar) {
     if (e.key === 'ArrowRight') next();
   });
 
-  // Touch swipe
+  // Touch swipe on lightbox
   var touchX = 0;
   lb.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; }, {passive:true});
   lb.addEventListener('touchend', function(e) {
     var dx = e.changedTouches[0].clientX - touchX;
     if (Math.abs(dx) > 50) { if (dx < 0) next(); else prev(); }
   }, {passive:true});
+})();
+
+// Arrastrar con ratón en la galería horizontal
+(function(){
+  var grid = document.getElementById('galeria-grid');
+  if (!grid) return;
+  var isDown = false, startX, scrollLeft;
+  grid.addEventListener('mousedown', function(e) {
+    isDown = true; startX = e.pageX - grid.offsetLeft; scrollLeft = grid.scrollLeft;
+  });
+  document.addEventListener('mouseup', function() { isDown = false; });
+  grid.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - grid.offsetLeft;
+    grid.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
 })();
 </script>
 </body>

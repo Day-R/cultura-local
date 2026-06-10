@@ -190,12 +190,19 @@ footer{background:var(--Y);padding:2rem 4rem;display:flex;align-items:center;jus
 .libro-valerio-desc{font-size:.88rem;color:#ccc;line-height:1.65;font-weight:300;font-family:'Crimson Text',serif;font-style:italic}
 
 @media(max-width:900px){
-.hero{grid-template-columns:1fr}.hero-right{min-height:280px}
+.hero{grid-template-columns:1fr;min-height:auto}
+.hero-left{padding:2rem 1.5rem}
+.hero-right{min-height:220px}
+.hero-title{font-size:clamp(2.4rem,10vw,3.5rem);margin-bottom:.4rem}
+.hero-tagline{font-size:1.15rem;margin-bottom:1.2rem}
+.hero-desc{margin-bottom:1.5rem}
+.hero-badge{font-size:2rem;padding:1rem 1.5rem}
 .mapa-wrap,.entrevistas-grid,.productos-grid,.contacto-grid{grid-template-columns:1fr}
 .sectores-grid{grid-template-columns:1fr 1fr}
 .acerca-inner,.libro-inner{grid-template-columns:1fr}
 .libro-aside{position:static}
-.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec,.libro-sec{padding:3.5rem 1.5rem}
+.ec:last-child:nth-child(3n+1){grid-column:auto}
+.sec,.mapa-sec,.sectores-sec,.entrevistas-sec,.productos-sec,.contacto-sec,.galeria-sec,.libro-sec{padding:3rem 1.5rem}
 .strip{padding:3rem 1.5rem;text-align:center;justify-content:center}
 footer{padding:2rem 1.5rem;justify-content:center;text-align:center}
 .gi{width:220px;height:280px}.gi.w2{width:300px}
